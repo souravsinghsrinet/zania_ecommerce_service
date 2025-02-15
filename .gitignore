@@ -1,0 +1,11 @@
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore virtual environment directories
+venv/
+env/
+
+# Ignore PyCharm generated config files
+.idea/*
+*/.idea/
