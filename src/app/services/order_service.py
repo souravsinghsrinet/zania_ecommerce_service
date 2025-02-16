@@ -22,9 +22,6 @@ class OrderService:
             db_order_item = OrderItem(product_id=item.product_id, quantity=item.quantity)
             order_items.append(db_order_item)
             total_price += product.price * item.quantity
-            print(f"====p_id:{product.id}; p_name: {product.name}; p_price: {product.price}; i_quantity: {item.quantity}")
-            print(f"====p_stock: {product.stock}")
-            print(f"===total_price: {total_price}")
 
         db_order = Order(total_price=total_price, products=order_items, status="completed")
         self.db.add(db_order)
