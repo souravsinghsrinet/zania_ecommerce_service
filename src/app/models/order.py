@@ -9,7 +9,7 @@ class Order(Base):
     id = Column(Integer, primary_key=True, index=True)
     total_price = Column(Float)
     status = Column(String, default="pending")
-    items = relationship("OrderItem", back_populates="order")
+    products = relationship("OrderItem", back_populates="order")
 
 
 class OrderItem(Base):
@@ -19,4 +19,4 @@ class OrderItem(Base):
     order_id = Column(Integer, ForeignKey("orders.id"))
     product_id = Column(Integer, ForeignKey("products.id"))
     quantity = Column(Integer)
-    order = relationship("Order", back_populates="items")
+    order = relationship("Order", back_populates="products")

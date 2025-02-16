@@ -9,3 +9,6 @@ env/
 # Ignore PyCharm generated config files
 .idea/*
 */.idea/
+
+.DS_Store
+*/test.db

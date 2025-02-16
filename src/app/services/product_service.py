@@ -12,7 +12,7 @@ class ProductService:
         return self.db.query(Product).all()
 
     def add_new_product(self, product: ProductCreate):
-        new_product = Product(**product.dict())
+        new_product = Product(**product.model_dump())
         self.db.add(new_product)
         self.db.commit()
         self.db.refresh(new_product)
