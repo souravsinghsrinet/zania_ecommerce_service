@@ -43,6 +43,30 @@ def test_add_product():
     assert response_data["stock"] == product_data["stock"]
 
 
+def test_add_product_input_validation():
+    product_data = {
+        "name": "Mac book Pro",
+        "description": "An apple laptop",
+        "price": 230000,
+        "stock": -1
+    }
+    response = client.post("/v1/products", json=product_data)
+    assert response.status_code == 422
+
+
+def test_place_order_input_validation():
+    order_item = {
+        "items": [
+            {
+                "product_id": 11,   # this id doesn't exits
+                "quantity": 3
+            }
+        ]
+    }
+    response = client.post("/v1/orders", json=order_item)
+    assert response.status_code == 400
+
+
 def test_place_order():
     order_item = {
         "items": [
