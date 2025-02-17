@@ -39,7 +39,7 @@ cd zania_ecommerce_service
 ## Running the Application
 
 * Run with Docker
-Take advantage of available Makefile
+Take advantage of available **Makefile**
   * To build a docker container
   ```bash
   make build
@@ -70,15 +70,29 @@ POST /v1/products → Add a new product
 
 * Orders
 ```bash
-POST /orders → Place an order
+POST /v1/orders → Place an order
 ```
 
 ## Testing
 
-Run the unit and integration tests using pytest:
-```bash
-pytest -v
-```
+Run the unit and integration tests using pytest in a docker environment:
+  * To build a docker container for testing
+  ```bash
+  make buildtest
+  ```
+  * To run a docker image for testing
+  ```bash
+  make runtest
+  ```
+  * To remove a docker container for testing
+  ```bash
+  make removetest
+  ```
+  * To run all the above together for testing
+  ```bash
+  make rebuildtest
+  ```
+
 
 ## Project Structure
 ```bash
