@@ -73,10 +73,23 @@ uvicorn main:app --reload
 The API will be available at http://127.0.0.1:8000
 
 * Run with Docker
-```bash
-docker build -t ecommerce-api .
-docker run --env-file=app.env -p 8000:8000 ecommerce-api
-```
+Take advantage of available Makefile
+  * To build a docker container
+  ```bash
+  make build
+  ```
+  * To run a docker image
+  ```bash
+  make run
+  ```
+  * To remove a docker container
+  ```bash
+  make remove
+  ```
+  * To run all the above together
+  ```bash
+  make rebuild
+  ```
 
 ## API Endpoints
 
