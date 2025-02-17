@@ -25,8 +25,6 @@ Ensure you have the following installed before running the project:
 
 * Docker (if running in a container)
 
-* PostgreSQL (or SQLite for local development)
-
 ## Installation & Setup
 
 1. Clone the Repository
