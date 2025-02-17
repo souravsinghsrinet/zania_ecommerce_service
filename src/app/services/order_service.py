@@ -15,7 +15,10 @@ class OrderService:
         order_items = []
         for item in order.items:
             product = self.db.query(Product).filter(Product.id == item.product_id).first()
-            if not product or product.stock < item.quantity:
+            if not product:
+                raise HTTPException(status_code=400,
+                                    detail="Product ID {} doesn't exists.".format(item.product_id))
+            elif product.stock < item.quantity:
                 raise HTTPException(status_code=400,
                                     detail="Insufficient stock for product ID {}".format(item.product_id))
             product.stock -= item.quantity
