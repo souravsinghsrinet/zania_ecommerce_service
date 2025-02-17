@@ -32,7 +32,7 @@ Ensure you have the following installed before running the project:
 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-repo/ecommerce-api.git
+git clone https://github.com/souravsinghsrinet/zania_ecommerce_service.git
 cd ecommerce-api
 ```
 
@@ -104,13 +104,28 @@ pytest -v
 ```bash
 ├── src
 │   ├── app
+│   │   ├── models                    # Database models (Product, Order)
+│   │   │   ├── order.py
+│   │   │   ├── product.py
+│   │   ├── routes                    # API Endpoints
+│   │   │   ├── v1
+│   │   │   │   ├── orders.py
+│   │   │   │   ├── products.py
+│   │   ├── schemas                   # Pydantic schemas for request/response validation
+│   │   │   ├── order.py
+│   │   │   ├── product.py
+│   │   ├── services                  # Business logic services
+│   │   │   ├── order_service.py
+│   │   │   ├── product_service.py
+│   │   ├── utils                     # Common utility methods such as Database connection setup
+│   │   │   ├── db.py
 │   │   ├── main.py         # FastAPI application entry point
-│   │   ├── models          # Database models (Product, Order)
-│   │   ├── schemas.py      # Pydantic schemas for request/response validation
-│   │   ├── services        # Business logic services
-│   │   ├── db.py           # Database connection setup
-│   ├── tests               # Unit and integration tests
+│   ├── tests
+│   │   ├──test_app.py      # Integration test script
+│   │   ├──test_order_service.py                 # Unit test script
+│   ├── run.py              # App runner via uvicorn
 ├── Dockerfile              # Docker setup
+├── Makefile                # Automate docker script
 ├── requirements.txt        # Python dependencies
 ├── README.md               # Documentation
 ```
