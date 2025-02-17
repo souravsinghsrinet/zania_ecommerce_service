@@ -5,7 +5,7 @@ build:
 	docker build -t $(IMAGE_NAME) .
 
 run:
-	docker run -p 8000:8080 --name $(CONTAINER_NAME) $(IMAGE_NAME)
+	docker run --env-file=app.env -p 8000:8080 --name $(CONTAINER_NAME) $(IMAGE_NAME)
 
 remove:
 	docker rm $(CONTAINER_NAME)
