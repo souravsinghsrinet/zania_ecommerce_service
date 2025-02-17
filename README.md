@@ -33,7 +33,7 @@ Ensure you have the following installed before running the project:
 
 ```bash
 git clone https://github.com/souravsinghsrinet/zania_ecommerce_service.git
-cd ecommerce-api
+cd zania_ecommerce_service
 ```
 
 2. Create and Activate a Virtual Environment
@@ -51,10 +51,10 @@ pip install -r requirements.txt
 
 4. Configure Environment Variables
 
-Create a .env file in the root directory and specify your database connection details:
+Create a app.env file in the root directory and specify your database connection details:
 
 ```bash
-DATABASE_URL=sqlite:///./test.db  # Use PostgreSQL for production
+DB_URL=sqlite:///./test.db  # Use PostgreSQL for production
 ```
 
 5. Initialize the Database
@@ -75,7 +75,7 @@ The API will be available at http://127.0.0.1:8000
 * Run with Docker
 ```bash
 docker build -t ecommerce-api .
-docker run -p 8000:8000 ecommerce-api
+docker run --env-file=app.env -p 8000:8000 ecommerce-api
 ```
 
 ## API Endpoints
