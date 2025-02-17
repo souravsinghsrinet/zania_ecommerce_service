@@ -36,41 +36,7 @@ git clone https://github.com/souravsinghsrinet/zania_ecommerce_service.git
 cd zania_ecommerce_service
 ```
 
-2. Create and Activate a Virtual Environment
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate    # On Windows
-```
-
-3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-4. Configure Environment Variables
-
-Create a app.env file in the root directory and specify your database connection details:
-
-```bash
-DB_URL=sqlite:///./test.db  # Use PostgreSQL for production
-```
-
-5. Initialize the Database
-
-```bash
-python -m src.app.db
-```
-
 ## Running the Application
-
-* Run Locally
-
-```bash
-uvicorn main:app --reload
-```
-The API will be available at http://127.0.0.1:8000
 
 * Run with Docker
 Take advantage of available Makefile
@@ -90,6 +56,7 @@ Take advantage of available Makefile
   ```bash
   make rebuild
   ```
+Once the app is running, go to http://localhost:8000/docs to interact with endpoint (input schema included)
 
 ## API Endpoints
 
