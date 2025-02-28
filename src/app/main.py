@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from src.app.utils.db import init_db
 from src.app.routes.v1 import (
-    product_router, order_router)
+    product_router, order_router, pizza_router)
 
 app = FastAPI(debug=True)
 
@@ -13,5 +13,6 @@ def startup():
 
 app.include_router(product_router)
 app.include_router(order_router)
+app.include_router(pizza_router)
 
 
